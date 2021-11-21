@@ -86,6 +86,12 @@ def main(seed, shuffle_data, num_examples):
 
     ds_train, ds_test = build_pipelines(shuffle_data, num_examples)
 
+    if not shuffle_data:
+        print("Training data will not be shuffled")
+
+    if seed:
+        print(f"Setting global random seed to {seed}")
+    
     model = build_model()
 
     hist = model.fit(ds_train, epochs=6, validation_data=ds_test, verbose=0)
