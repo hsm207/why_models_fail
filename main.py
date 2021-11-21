@@ -2,6 +2,7 @@ import click
 import tensorflow as tf
 import tensorflow_datasets as tfds
 
+# bsed on https://www.tensorflow.org/datasets/keras_example
 
 def normalize_img(image, label):
     """Normalizes images: `uint8` -> `float32`."""
